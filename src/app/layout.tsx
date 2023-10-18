@@ -4,6 +4,8 @@ import '@/styles/globals.css';
 import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 
+import { cn } from '@/lib/utils';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -17,8 +19,10 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="light">
+      <body className={cn('min-h-screen font-sans antialiased grainy', inter.className)}>
+        {children}
+      </body>
     </html>
   );
 }
