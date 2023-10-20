@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
+import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs/server';
 import { MaxWidthWrapper } from '@/components/MaxWidthWrapper';
 import { buttonVariants } from '@/components/ui/button';
 
@@ -20,15 +21,13 @@ export default function Page() {
           start asking questions right away.
         </p>
 
-        <Link
-          href={'/'}
-          target="_blank"
+        <RegisterLink
           className={buttonVariants({
             size: 'lg',
             className: 'mt-5',
           })}>
           Get started <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+        </RegisterLink>
       </MaxWidthWrapper>
 
       {/* value proposition section*/}
