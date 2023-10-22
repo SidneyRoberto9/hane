@@ -8,6 +8,7 @@ import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Providers } from '@/components/Providers';
 import { Navbar } from '@/components/Navbar';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,12 +24,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="light">
-      <body className={cn('min-h-screen font-sans antialiased grainy', inter.className)}>
-        <Providers>
+      <Providers>
+        <body className={cn('min-h-screen font-sans antialiased grainy', inter.className)}>
           <Navbar />
           {children}
-        </Providers>
-      </body>
+          <Toaster />
+        </body>
+      </Providers>
     </html>
   );
 }

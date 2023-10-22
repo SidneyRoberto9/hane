@@ -31,7 +31,7 @@ model File {
   id   String @id @default(cuid())
   name String
 
-  UploadStatus UploadStatus @default(PENDING)
+  uploadStatus UploadStatus @default(PENDING)
 
   url String
   key String

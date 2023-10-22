@@ -5,6 +5,7 @@ import { PropsWithChildren, useState } from 'react';
 import { httpBatchLink } from '@trpc/client';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { trpc } from '@/app/_trpc/client';
+import { Toast } from '@/components/ui/toast';
 
 export function Providers({ children }: PropsWithChildren) {
   const [queryClient] = useState(() => new QueryClient());
